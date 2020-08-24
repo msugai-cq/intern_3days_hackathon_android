@@ -1,4 +1,4 @@
-package com.example.intern_anrdoid_2020
+package com.example.intern_3days_hackathon
 
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.GsonBuilder

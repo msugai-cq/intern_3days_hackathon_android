@@ -1,8 +1,8 @@
-package com.example.intern_anrdoid_2020.view
+package com.example.intern_3days_hackathon.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.intern_anrdoid_2020.R
+import com.example.intern_3days_hackathon.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

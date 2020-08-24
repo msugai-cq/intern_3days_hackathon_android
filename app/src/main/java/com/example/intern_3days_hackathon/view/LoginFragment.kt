@@ -1,4 +1,4 @@
-package com.example.intern_anrdoid_2020.view
+package com.example.intern_3days_hackathon.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
-import com.example.intern_anrdoid_2020.R
+import com.example.intern_3days_hackathon.R
 import kotlinx.android.synthetic.main.fragment_login.view.*
 
 class LoginFragment : Fragment() {

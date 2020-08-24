@@ -1,4 +1,4 @@
-package com.example.intern_anrdoid_2020.view
+package com.example.intern_3days_hackathon.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,8 +8,8 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import com.example.intern_anrdoid_2020.R
-import com.example.intern_anrdoid_2020.model.response.Event
+import com.example.intern_3days_hackathon.R
+import com.example.intern_3days_hackathon.model.response.Event
 import kotlinx.android.synthetic.main.fragment_search.view.*
 import java.util.*
 

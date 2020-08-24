@@ -1,13 +1,13 @@
-package com.example.intern_anrdoid_2020.view
+package com.example.intern_3days_hackathon.view
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.intern_anrdoid_2020.R
-import com.example.intern_anrdoid_2020.model.response.Event
-import com.example.intern_anrdoid_2020.view.EventListViewAdapter.EventListViewHolder
+import com.example.intern_3days_hackathon.R
+import com.example.intern_3days_hackathon.model.response.Event
+import com.example.intern_3days_hackathon.view.EventListViewAdapter.EventListViewHolder
 import kotlinx.android.synthetic.main.row_event_list.view.*
 
 class EventListViewAdapter(private val listData: List<Event>?) : RecyclerView.Adapter<EventListViewHolder>() {

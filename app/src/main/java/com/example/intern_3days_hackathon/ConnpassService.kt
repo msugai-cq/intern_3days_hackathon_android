@@ -1,6 +1,6 @@
-package com.example.intern_anrdoid_2020
+package com.example.intern_3days_hackathon
 
-import com.example.intern_anrdoid_2020.model.response.ConnpassResponse
+import com.example.intern_3days_hackathon.model.response.ConnpassResponse
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Headers

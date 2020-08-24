@@ -1,4 +1,4 @@
-package com.example.intern_anrdoid_2020.view
+package com.example.intern_3days_hackathon.view
 
 import android.net.Uri
 import android.os.Bundle
@@ -11,8 +11,8 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.intern_anrdoid_2020.R
-import com.example.intern_anrdoid_2020.model.response.Event
+import com.example.intern_3days_hackathon.R
+import com.example.intern_3days_hackathon.model.response.Event
 import kotlinx.android.synthetic.main.fragment_event_list.*
 import java.util.*
 

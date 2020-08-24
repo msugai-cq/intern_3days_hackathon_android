@@ -1,4 +1,4 @@
-package com.example.intern_anrdoid_2020.model.response
+package com.example.intern_3days_hackathon.model.response
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
