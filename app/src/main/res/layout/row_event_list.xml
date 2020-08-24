@@ -36,7 +36,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
-        android:text="@string/event_title"
         android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="@id/tv_event_address"
         app:layout_constraintLeft_toLeftOf="@id/tv_event_title"
