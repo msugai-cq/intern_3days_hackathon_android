@@ -5,12 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.example.intern_anrdoid_2020.R
-import com.example.intern_anrdoid_2020.model.response.QiitaArticleResponse
+import com.example.intern_anrdoid_2020.model.response.Event
 import kotlinx.android.synthetic.main.fragment_search.view.*
 import java.util.*
 
@@ -33,25 +32,24 @@ class SearchFragment : Fragment() {
         searchButton.setOnClickListener {
             view?.let {
                 val searchKey  = it.edit_search.text.toString()
-                QiitaListRepository.listArticle(PAGE, PER_PAGE, searchKey).observe(viewLifecycleOwner, Observer { qiitaListResponse: ArrayList<QiitaArticleResponse> ->
-                    showQiitaListFragment(qiitaListResponse)
+                EventListRepository.listArticle(PER_PAGE, searchKey).observe(viewLifecycleOwner, Observer { qiitaListResponse: ArrayList<Event> ->
+                    showEventListFragment(qiitaListResponse)
                 })
             }
         }
         return v
     }
 
-    private fun showQiitaListFragment(qiitaArticleResponse: ArrayList<QiitaArticleResponse>) {
+    private fun showEventListFragment(events: ArrayList<Event>) {
         fragmentManager?.let {
             val fragmentTransaction = it.beginTransaction()
-            fragmentTransaction.replace(R.id.search_layout_frame, QiitaListFragment.newInstance(qiitaArticleResponse))
+            fragmentTransaction.replace(R.id.search_layout_frame, EventListFragment.newInstance(events))
                     .addToBackStack(null)
                     .commit()
         }
     }
 
     companion object {
-        private const val PAGE = 1
         private const val PER_PAGE = 10
     }
 }

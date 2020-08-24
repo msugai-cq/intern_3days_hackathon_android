@@ -12,25 +12,25 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.intern_anrdoid_2020.R
-import com.example.intern_anrdoid_2020.model.response.QiitaArticleResponse
+import com.example.intern_anrdoid_2020.model.response.Event
 import kotlinx.android.synthetic.main.fragment_qiita_list.*
 //import sun.jvm.hotspot.utilities.IntArray
 import java.util.*
 
 
-class QiitaListFragment : Fragment() {
+class EventListFragment : Fragment() {
 
-    private var qiitaArticles: ArrayList<QiitaArticleResponse>? = ArrayList()
+    private var events: ArrayList<Event>? = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let { argument ->
-            qiitaArticles = argument.getSerializable(QIITA_ARTICLES) as? ArrayList<QiitaArticleResponse>
+            events = argument.getSerializable(CONNPASS_EVENTS) as? ArrayList<Event>
         }
 
         val appCompatActivity = activity as AppCompatActivity?
         val actionBar = appCompatActivity?.supportActionBar
-        actionBar?.setTitle(R.string.article_view)
+        actionBar?.setTitle(R.string.event_list_view)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -47,27 +47,27 @@ class QiitaListFragment : Fragment() {
             val recyclerView: RecyclerView = rv_menu
             val layoutManager = LinearLayoutManager(view.context)
             recyclerView.layoutManager = layoutManager
-            val adapter = QiitaListViewAdapter(qiitaArticles)
+            val adapter = EventListViewAdapter(events)
             recyclerView.adapter = adapter
             val decorator = DividerItemDecoration(context, layoutManager.orientation)
             recyclerView.addItemDecoration(decorator)
 
-            adapter.setOnItemClickListener(object: QiitaListViewAdapter.OnItemClickListener{
-                override fun onItemClickListener(item: QiitaArticleResponse) {
+            adapter.setOnItemClickListener(object: EventListViewAdapter.OnItemClickListener{
+                override fun onItemClickListener(item: Event) {
                     val builder = CustomTabsIntent.Builder()
                     val customTabsIntent = builder.build()
-                    customTabsIntent.launchUrl(view.context, Uri.parse(item.url))
+                    customTabsIntent.launchUrl(view.context, Uri.parse(item.eventURL))
                 }
             })
         }
     }
 
     companion object {
-        private const val QIITA_ARTICLES = "qiitaArticles"
-        fun newInstance(response: ArrayList<QiitaArticleResponse>): QiitaListFragment {
-            val fragment = QiitaListFragment()
+        private const val CONNPASS_EVENTS = "connpass_events"
+        fun newInstance(response: ArrayList<Event>): EventListFragment {
+            val fragment = EventListFragment()
             val args = Bundle()
-            args.putSerializable(QIITA_ARTICLES, response)
+            args.putSerializable(CONNPASS_EVENTS, response)
             fragment.arguments = args
             return fragment
         }
