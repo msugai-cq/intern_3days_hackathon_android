@@ -3,13 +3,12 @@ package com.example.intern_anrdoid_2020.view
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.intern_anrdoid_2020.R
 import com.example.intern_anrdoid_2020.model.response.Event
 import com.example.intern_anrdoid_2020.view.EventListViewAdapter.EventListViewHolder
-import kotlinx.android.synthetic.main.row_qiita_list.view.*
+import kotlinx.android.synthetic.main.row_event_list.view.*
 
 class EventListViewAdapter(private val listData: List<Event>?) : RecyclerView.Adapter<EventListViewHolder>() {
 
@@ -24,32 +23,30 @@ class EventListViewAdapter(private val listData: List<Event>?) : RecyclerView.Ad
     }
 
     class EventListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val ivQiitaImage: ImageView
         val tvEventTitle: TextView
         val tvEventAddress: TextView
 
         init {
-            ivQiitaImage = itemView.iv_user_image
-            tvEventTitle = itemView.tv_qiita_title
-            tvEventAddress = itemView.tv_qiita_lgtm_counter
+            tvEventTitle = itemView.tv_event_title
+            tvEventAddress = itemView.tv_event_address_name
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventListViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.row_qiita_list, parent, false)
+        val v = LayoutInflater.from(parent.context).inflate(R.layout.row_event_list, parent, false)
         return EventListViewHolder(v)
     }
 
     override fun onBindViewHolder(holder: EventListViewHolder, position: Int) {
         listData?.let {
-            val qiitaArticleResponse = listData[position]
-            holder.tvEventTitle.text = qiitaArticleResponse.title
-             holder.tvEventAddress.text = qiitaArticleResponse.address
+            val event = listData[position]
+            holder.tvEventTitle.text = event.title
+             holder.tvEventAddress.text = event.address
             holder.itemView.setOnClickListener {
                 if (position == RecyclerView.NO_POSITION) {
                     return@setOnClickListener
                 }
-                listener.onItemClickListener(qiitaArticleResponse)
+                listener.onItemClickListener(event)
             }
         }
     }

@@ -13,8 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.intern_anrdoid_2020.R
 import com.example.intern_anrdoid_2020.model.response.Event
-import kotlinx.android.synthetic.main.fragment_qiita_list.*
-//import sun.jvm.hotspot.utilities.IntArray
+import kotlinx.android.synthetic.main.fragment_event_list.*
 import java.util.*
 
 
@@ -34,7 +33,7 @@ class EventListFragment : Fragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_qiita_list, container, false)
+        return inflater.inflate(R.layout.fragment_event_list, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

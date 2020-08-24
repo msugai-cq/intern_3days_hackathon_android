@@ -32,8 +32,8 @@ class SearchFragment : Fragment() {
         searchButton.setOnClickListener {
             view?.let {
                 val searchKey  = it.edit_search.text.toString()
-                EventListRepository.listArticle(PER_PAGE, searchKey).observe(viewLifecycleOwner, Observer { qiitaListResponse: ArrayList<Event> ->
-                    showEventListFragment(qiitaListResponse)
+                EventListRepository.listArticle(PER_PAGE, searchKey).observe(viewLifecycleOwner, Observer { events: ArrayList<Event> ->
+                    showEventListFragment(events)
                 })
             }
         }
