@@ -28,11 +28,11 @@ class SearchFragment : Fragment() {
     }
 
     private fun setup(v: View): View {
-        val searchButton :Button = v.search_button
+        val searchButton: Button = v.search_button
         searchButton.setOnClickListener {
             view?.let {
-                val searchKey  = it.edit_search.text.toString()
-                EventListRepository.listArticle(PER_PAGE, searchKey).observe(viewLifecycleOwner, Observer { events: ArrayList<Event> ->
+                val searchKey = it.edit_search.text.toString()
+                EventListRepository.listArticle(PER_PAGE, searchKey).observe(viewLifecycleOwner, { events: ArrayList<Event> ->
                     showEventListFragment(events)
                 })
             }

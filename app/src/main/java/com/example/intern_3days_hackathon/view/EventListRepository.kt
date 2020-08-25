@@ -18,7 +18,7 @@ object EventListRepository {
         connpassService.getEvents(count, query).enqueue(object : Callback<ConnpassResponse> {
             override fun onResponse(call: Call<ConnpassResponse>?, response: Response<ConnpassResponse>) {
                 if (response.isSuccessful) {
-                    response.body()?.let{
+                    response.body()?.let {
                         data.postValue(it.events as ArrayList<Event>)
                     }
                 } else {

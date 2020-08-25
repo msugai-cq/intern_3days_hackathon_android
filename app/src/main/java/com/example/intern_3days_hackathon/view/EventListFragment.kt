@@ -42,7 +42,7 @@ class EventListFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        view?.let {view ->
+        view?.let { view ->
             val recyclerView: RecyclerView = rv_menu
             val layoutManager = LinearLayoutManager(view.context)
             recyclerView.layoutManager = layoutManager
@@ -51,7 +51,7 @@ class EventListFragment : Fragment() {
             val decorator = DividerItemDecoration(context, layoutManager.orientation)
             recyclerView.addItemDecoration(decorator)
 
-            adapter.setOnItemClickListener(object: EventListViewAdapter.OnItemClickListener{
+            adapter.setOnItemClickListener(object : EventListViewAdapter.OnItemClickListener {
                 override fun onItemClickListener(item: Event) {
                     val builder = CustomTabsIntent.Builder()
                     val customTabsIntent = builder.build()

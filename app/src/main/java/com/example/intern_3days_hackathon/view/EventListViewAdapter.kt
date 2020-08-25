@@ -23,13 +23,8 @@ class EventListViewAdapter(private val listData: List<Event>?) : RecyclerView.Ad
     }
 
     class EventListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val tvEventTitle: TextView
-        val tvEventAddress: TextView
-
-        init {
-            tvEventTitle = itemView.tv_event_title
-            tvEventAddress = itemView.tv_event_address_name
-        }
+        val tvEventTitle: TextView = itemView.tv_event_title
+        val tvEventAddress: TextView = itemView.tv_event_address_name
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventListViewHolder {
@@ -41,7 +36,7 @@ class EventListViewAdapter(private val listData: List<Event>?) : RecyclerView.Ad
         listData?.let {
             val event = listData[position]
             holder.tvEventTitle.text = event.title
-             holder.tvEventAddress.text = event.address
+            holder.tvEventAddress.text = event.address
             holder.itemView.setOnClickListener {
                 if (position == RecyclerView.NO_POSITION) {
                     return@setOnClickListener
