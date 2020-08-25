@@ -1,4 +1,4 @@
-package com.example.intern_anrdoid_2020
+package com.example.intern_3days_hackathon
 
 import com.google.gson.FieldNamingPolicy
 import com.google.gson.GsonBuilder
@@ -8,15 +8,15 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 object HttpClient {
-    private const val BASE_URL = "https://qiita.com/api/v2/"
-    val qiitaService: QiitaService
+    private const val BASE_URL = "https://connpass.com/api/v1/"
+    val connpassService: ConnpassService
         get() {
             val retrofit = Retrofit.Builder()
                     .baseUrl(BASE_URL)
                     .addConverterFactory(GsonConverterFactory.create(gson))
                     .client(client)
                     .build()
-            return retrofit.create(QiitaService::class.java)
+            return retrofit.create(ConnpassService::class.java)
         }
 
     private val client = OkHttpClient.Builder()

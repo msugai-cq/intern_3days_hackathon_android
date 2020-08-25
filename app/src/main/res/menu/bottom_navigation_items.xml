@@ -7,7 +7,7 @@
         />
     <item
         android:id="@+id/nab_setting"
-        android:title="@string/question1"
+        android:title="@string/tab1"
         android:color="@color/colorWhite"
         />
 </menu>
