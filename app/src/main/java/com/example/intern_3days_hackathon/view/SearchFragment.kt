@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import com.example.intern_3days_hackathon.R
 import com.example.intern_3days_hackathon.model.response.Event
 import kotlinx.android.synthetic.main.fragment_search.view.*

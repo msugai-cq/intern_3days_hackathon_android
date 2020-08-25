@@ -28,7 +28,7 @@ object EventListRepository {
 
             override fun onFailure(call: Call<ConnpassResponse>?, t: Throwable) {
                 data.postValue(null)
-                Log.e(LOG_TAG, "API連携に失敗:" + t.message)
+                Log.e(LOG_TAG, "API連携に失敗:$t")
             }
         })
         return data
