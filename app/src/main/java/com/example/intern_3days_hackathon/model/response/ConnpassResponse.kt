@@ -1,17 +1,17 @@
 package com.example.intern_3days_hackathon.model.response
 
-import kotlinx.serialization.SerialName
+import com.google.gson.annotations.SerializedName
 import kotlinx.serialization.Serializable
 
 @Serializable
 data class ConnpassResponse(
-        @SerialName("results_start")
+        @SerializedName("results_start")
         val resultsStart: Long,
 
-        @SerialName("results_returned")
+        @SerializedName("results_returned")
         val resultsReturned: Long,
 
-        @SerialName("results_available")
+        @SerializedName("results_available")
         val resultsAvailable: Long,
 
         val events: List<Event>
@@ -19,49 +19,49 @@ data class ConnpassResponse(
 
 @Serializable
 data class Event(
-        @SerialName("event_id")
+        @SerializedName("event_id")
         val eventID: Long,
 
         val title: String,
         val catch: String,
         val description: String,
 
-        @SerialName("event_url")
+        @SerializedName("event_url")
         val eventURL: String,
 
-        @SerialName("started_at")
+        @SerializedName("started_at")
         val startedAt: String,
 
-        @SerialName("ended_at")
+        @SerializedName("ended_at")
         val endedAt: String,
 
         val limit: Long? = null,
 
-        @SerialName("hash_tag")
+        @SerializedName("hash_tag")
         val hashTag: String,
 
-        @SerialName("event_type")
+        @SerializedName("event_type")
         val eventType: String,
 
         val accepted: Long,
         val waiting: Long,
 
-        @SerialName("updated_at")
+        @SerializedName("updated_at")
         val updatedAt: String,
 
-        @SerialName("owner_id")
+        @SerializedName("owner_id")
         val ownerID: Long,
 
-        @SerialName("owner_nickname")
+        @SerializedName("owner_nickname")
         val ownerNickname: String,
 
-        @SerialName("owner_display_name")
+        @SerializedName("owner_display_name")
         val ownerDisplayName: String,
 
         val place: String?,
         val address: String?,
-        val lat: Any? = null,
-        val lon: Any? = null,
+        val lat: String?,
+        val lon: String?,
         val series: Series
 )
 
@@ -70,10 +70,4 @@ data class Series(
         val id: Long,
         val title: String,
         val url: String
-)
-
-@Serializable
-data class EventType(
-        val participation: String,
-        val advertisement: String
 )
